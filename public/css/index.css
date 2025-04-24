@@ -1,0 +1,36 @@
+body {
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9cm;
+    background-image: url("../img/coverp.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container{
+    text-align: left;
+    font-size: 0.5cm;
+    margin-top: 15%;
+}
+.account{
+    text-align: left;
+    font-size: 0.5cm;
+    margin-top: 10%;
+}
+.signup{
+    background-color:  rgb(108, 241, 168);
+    width: 10%;
+    padding: 10px;
+    color:black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.signin{
+    background-color:  rgb(108, 241, 168);
+    width: 10%;
+    padding: 10px;
+    color:black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
