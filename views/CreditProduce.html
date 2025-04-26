@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap-5.3.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../public/css/addproduce.css">
+
+    <link rel="stylesheet" href="../public/css/signin.css">
+    
+    
+    <title>Credit Produce</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="form-container">
+            <div class="header1">
+                <h1>Produce on Credit</h1>
+                
+            </div>
+            
+            <form action="">
+                <div class="main-user-info">
+                <div class="user-input-box">
+                    
+                        <label>Buyer's name</label>
+                      <input type="text" name="buyername"  placeholder="Enter buyer's name"/>
+                    </div>
+                    <div class="user-input-box">
+                        <label>National id</label>
+                      <input type="text" name="nationalid"  placeholder="Enter buyer's National id"/>
+                    </div>
+                    <div class="user-input-box">
+                        <label>Location</label>
+                      <input type="string" name="location"  placeholder="Enter buyer's location"/>
+                    </div>
+                    
+                <div class="user-input-box">
+                    <label>Tonnage(kgs)</label>
+                  <input type="number" name="quantity"  placeholder="Add quantity"/>
+                </div>
+                <div class="user-input-box">
+                    <label>Amount due</label>
+                  <input type="number" name="amountdue"  placeholder="Add amount due"/>
+                </div>
+                
+                <div class="user-input-box">
+                    <label>Sales Agent's name</label>
+                  <input type="text" name="salesagentname"  placeholder="Add sales agent's name"/>
+                </div>
+                <div class="user-input-box">
+                  <label>Due Date</label>
+                <input type="date" name="duedate"  placeholder="Enter the due date"/>
+              </div>
+              <div class="user-input-box">
+                <label>Dispatch Date</label>
+              <input type="date" name="dispatchdate"  placeholder="Enter the date of dispatch"/>
+            </div>
+            <div class="user-input-box">
+            <label for="phonenumber">Phone Number</label>
+                <input type="number" id="phonenumber" 
+                name="phonenumber" placeholder="Enter buyer's phone number"/>
+                </div>
+            <div class="user-input-box">
+                <label>Type of Produce</label>
+              <input type="text" name="typeproduce"  placeholder="Add type of produce"/>
+            </div>
+            <div class="gender-details-box">
+                <span class="gender-title">Name of Produce</span>
+                <div class="gender-category">
+                    <select name="produce" class="produce">
+                        <option value=""></option>
+                        <option value="grainmaize">Grain Maize</option>
+                        <option value="soybeans">Soy Beans</option>
+                        <option value="cowpeas">Cow Peas</option>
+                        <option value="gnuts">Gnuts</option>
+                        <option value="beans">Beans</option>
+        
+                 </select><br>
+            
+            </div>
+            <div>
+            <button class="submit">Submit</button>      
+   </div>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>
