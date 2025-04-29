@@ -1,0 +1,25 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='../css/bootstrap-5.3.3-dist/css/bootstrap.css')
+  link(rel='stylesheet' href='../css/signup.css')
+  link(rel='stylesheet' href='../css/signin.css')
+  title SignIn
+  h1.header KARIBU GROCERIES LIMITED
+  hr
+.container
+  h1.form Sign In
+  form(action='/login' method='post')
+    .main-user-info
+      .user-input-box
+        label(for='email') Email
+        input#email(type='email' name='email' placeholder='Enter your email')
+        label(for='password') Password
+        input#password(type='password' name='password' placeholder='Enter your password')
+        u
+          p#forgotPassword
+            a(href='/views/forgotpassword.html')
+              | Forgot your Password?
+        p
+          button.submit Sign In

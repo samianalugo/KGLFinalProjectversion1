@@ -1,0 +1,42 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='../css/bootstrap-5.3.3-dist/css/bootstrap.css')
+  link(rel='stylesheet' href='../css/signup.css')
+  title SignUp
+.container
+  h1.form Registration
+  form(action='/signingup' method='post')
+    .main-user-info
+      .user-input-box
+        label(for='fullname') Full Name
+        input#fullName(type='text' name='fullName' placeholder='Enter your full name')
+        label(for='email') Email
+        input#email(type='email' name='email' placeholder='Enter your email')
+        label(for='password') Password
+        input#password(type='password' name='password' placeholder='Enter your password')
+        label(for='phonenumber') Phone Number
+        input#phoneNumber(type='number' name='phoneNumber' placeholder='Enter your phone number')
+    .gender-details-box
+      span.gender-title(name='gender') Gender
+      .gender-category
+        input#male(type='radio' name='male')
+        label(for='male') Male
+        input#female(type='radio' name='female')
+        label(for='female') Female
+      span.gender-title(name='role') Role
+      .gender-category
+        input#director(type='radio' name='director')
+        label(for='director') Director
+        input#manager(type='radio' name='manager')
+        label(for='manager') Manager
+        input#salesagent(type='radio' name='salesagent')
+        label(for='salesagent') Sales Agent
+      span.gender-title(name='branch') Branch
+      .gender-category
+        input#matugga(type='radio' name='matugga')
+        label(for='matugga') Matugga
+        input#maganjo(type='radio' name='maganjo')
+        label(for='maganjo') Maganjo
+    button.submit Submit

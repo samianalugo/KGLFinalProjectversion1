@@ -1,0 +1,36 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='../css/bootstrap-5.3.3-dist/css/bootstrap.css')
+  link(rel='stylesheet' href='../css/signup.css')
+  link(rel='stylesheet' href='../css/signin.css')
+ 
+.container
+  h1.form Enter Payments
+  form(action='/addPayment' method='post')
+    .main-user-info
+      .user-input-box
+        label(for='company') Company Name
+        input#company(type='text' name='company' placeholder="Enter supplier's company name")
+        label(for='phonenumber') Company Number
+        input#phoneNumber(type='number' name='phoneNumber' placeholder="Enter supplier's phone number")
+        label(for='amount') Amount Paid
+        input#amount(type='number' name='amountpaid')
+        label(for='amount') Balance Remaining
+        input#amount(type='number' name='amount')
+        label(for='date') Payment Date
+        input#date(type='date' name='date')
+      .gender-details-box
+        span.gender-title Name of Produce
+        .gender-category
+          select.produce(name='produce')
+            option(value='')
+            option(value='grainmaize') Grain Maize
+            option(value='soybeans') Soy Beans
+            option(value='cowpeas') Cow Peas
+            option(value='gnuts') Gnuts
+            option(value='beans') Beans
+          br
+    button.submit Submit
+// <h1>Table for existing Suppliers</h1>

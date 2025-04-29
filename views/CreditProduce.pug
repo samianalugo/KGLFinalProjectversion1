@@ -1,0 +1,57 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='../css/bootstrap-5.3.3-dist/css/bootstrap.css')
+  link(rel='stylesheet' href='../css/addproduce.css')
+  link(rel='stylesheet' href='../css/signin.css')
+  title Credit Produce
+.container
+  .form-container
+    .header1
+      h1 Produce on Credit
+    form(action='/addCreditProduce' method='post')
+      .main-user-info
+        .user-input-box
+          label Buyer&apos;s name
+          input(type='text' name='buyername' placeholder="Enter buyer's name")
+        .user-input-box
+          label National id
+          input(type='text' name='nationalid' placeholder="Enter buyer's National id")
+        .user-input-box
+          label Location
+          input(type='string' name='location' placeholder="Enter buyer's location")
+        .user-input-box
+          label Tonnage(kgs)
+          input(type='number' name='quantity' placeholder='Add quantity')
+        .user-input-box
+          label Amount due
+          input(type='number' name='amountdue' placeholder='Add amount due')
+        .user-input-box
+          label Sales Agent&apos;s name
+          input(type='text' name='salesagentname' placeholder="Add sales agent's name")
+        .user-input-box
+          label Due Date
+          input(type='date' name='duedate' placeholder='Enter the due date')
+        .user-input-box
+          label Dispatch Date
+          input(type='date' name='dispatchdate' placeholder='Enter the date of dispatch')
+        .user-input-box
+          label(for='phonenumber') Phone Number
+          input#phonenumber(type='number' name='phonenumber' placeholder="Enter buyer's phone number")
+        .user-input-box
+          label Type of Produce
+          input(type='text' name='typeproduce' placeholder='Add type of produce')
+        .gender-details-box
+          span.gender-title Name of Produce
+          .gender-category
+            select.produce(name='produce')
+              option(value='')
+              option(value='grainmaize') Grain Maize
+              option(value='soybeans') Soy Beans
+              option(value='cowpeas') Cow Peas
+              option(value='gnuts') Gnuts
+              option(value='beans') Beans
+            br
+          div
+            button.submit Submit

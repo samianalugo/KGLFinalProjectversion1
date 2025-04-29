@@ -3,17 +3,18 @@
   "version": "1.0.0",
   "description": "kgl project which is final",
   "license": "ISC",
-  "author": "",
+  "author": "samia",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon server.js"
   },
   "dependencies": {
     "chart.js": "^4.4.9",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0",
+    "express": "^4.21.2",
     "express-session": "^1.18.1",
+    "moment": "^2.30.1",
     "mongoose": "^8.13.2",
     "nodemon": "^3.1.9",
     "passport": "^0.7.0",
