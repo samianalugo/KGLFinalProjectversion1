@@ -21,22 +21,22 @@ head
     .gender-details-box
       span.gender-title(name='gender') Gender
       .gender-category
-        input#male(type='radio' name='male')
+        input#male(type='radio' name='gender' value='male')
         label(for='male') Male
-        input#female(type='radio' name='female')
+        input#female(type='radio' name='gender' value='female')
         label(for='female') Female
       span.gender-title(name='role') Role
       .gender-category
-        input#director(type='radio' name='director')
+        input#director(type='radio' name='role' value='director')
         label(for='director') Director
-        input#manager(type='radio' name='manager')
+        input#manager(type='radio' name='role' value='manager')
         label(for='manager') Manager
-        input#salesagent(type='radio' name='salesagent')
+        input#salesagent(type='radio' name='role' value='salesagent')
         label(for='salesagent') Sales Agent
       span.gender-title(name='branch') Branch
       .gender-category
-        input#matugga(type='radio' name='matugga')
+        input#matugga(type='radio' name='branch' value='matugga')
         label(for='matugga') Matugga
-        input#maganjo(type='radio' name='maganjo')
+        input#maganjo(type='radio' name='branch' value='maganjo')
         label(for='maganjo') Maganjo
-    button.submit Submit
+    button.submit(href='/login') Submit

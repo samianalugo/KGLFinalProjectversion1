@@ -1,12 +1,16 @@
 //defining a schema
 const mongoose = require("mongoose");
-const passportLocalMongoose = require("passport-Local-Mongoose");
+
 const saleSchema = new mongoose.Schema({
-  quantity: {
+  saletonnage: {
     type: Number,
     trim: true,
   },
-  amountprice: {
+  unitsellingprice: {
+    type: Number,
+    trim: true,
+  },
+  amountpaid: {
     type: Number,
     trim: true,
   },
@@ -14,18 +18,22 @@ const saleSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
-  salesagentname: {
-    type: String,
-    trim: true,
+  sellername: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "SignUp",
   },
   date: {
     type: Date,
     trim: true,
   },
-
-  produce: {
+  time: {
     type: String,
     trim: true
+  },
+
+  prodname: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Produce"
   }
 });
 

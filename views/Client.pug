@@ -6,11 +6,10 @@ head
   link(rel='stylesheet' href='../css/signup.css')
   link(rel='stylesheet' href='../css/signin.css')
   title Client Information
-  h1.header KARIBU GROCERIES LIMITED
-  hr
+ 
 .container
   h1.form Register Client
-  form(action='addClient' method='post')
+  form(action='/addClient' method='post')
     .main-user-info
       .user-input-box
         label(for='fullname') Full Name
@@ -26,4 +25,5 @@ head
         label(for='male') Male
         input#female(type='radio' name='female')
         label(for='female') Female
-      button.submit Submit
+      button.submit(href='/salesagentdash') Submit
+      

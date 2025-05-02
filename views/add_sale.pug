@@ -11,20 +11,23 @@ head
     .header1
       h1 Record Sale
       div
-    form(action='/addSale' method='post')
+    form(action='/addSale/:id' method='post')
       .main-user-info
         .user-input-box
           label Tonnage(kgs)
-          input(type='number' name='quantity' placeholder='Enter quantity')
+          input(type='number' name='saletonnage' placeholder='Enter quantity')
+          .user-input-box
+          label Price per kg
+          input(type='number' name='unitsellingprice' placeholder='Enter amount per kg')
         .user-input-box
           label Amount Paid
-          input(type='number' name='amountprice' placeholder='Enter amount paid')
+          input(type='number' name='amountpaid' placeholder='Enter amount paid')
         .user-input-box
           label Buyer&apos;s name
           input(type='text' name='buyername' placeholder="Enter buyer's name")
         .user-input-box
           label Sales Agent&apos;s name
-          input(type='text' name='salesagentname' placeholder="Enter sales agent's name")
+          input(type='text' name='sellername' placeholder="Enter sales agent's name")
         .user-input-box
           label Date
           input(type='date' name='date' placeholder="Enter today's date")
@@ -34,7 +37,7 @@ head
         .gender-details-box
           span.gender-title Name of Produce
           .gender-category
-            select.produce(name='produce')
+            select.produce(name='prodname')
               option(value='')
               option(value='grainmaize') Grain Maize
               option(value='soybeans') Soy Beans

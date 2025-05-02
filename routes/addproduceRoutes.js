@@ -4,17 +4,17 @@ const router = express.Router();
 const Produce = require("../models/Produce")
 
 router.get("/addproduce", (req, res)=>{
-    res.render("AddProduce")
+    res.render("Produce")
 })
 router.post("/addproduce",async(req, res)=>{
     try {
         const produce = new Produce(req.body);
         await produce.save();
         console.log(produce)
-        res.redirect("AddProduce/addproduce")
+        res.redirect("/addproduce")
 
-    }catch{
-        res.status(400).render("AddProduce")
+    }catch (error) {
+        res.status(400).render("/addproduce")
         console.log(error);
     }
 });

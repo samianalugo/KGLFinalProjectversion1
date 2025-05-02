@@ -31,14 +31,15 @@ head
         a(href='#')
           i.las.la-money-bill
           div View Sales Matugga
-      a(href='#')
+      a(href='/login')
         i.la-sign-out-alt
         div Logout
   .main
     .cards
       .card
         .card-content
-          .number 1217
+          .number 
+          span #{totalRevenue.totalsale}
           .card-name Total Sales
         .icon-box
           i.
@@ -51,6 +52,7 @@ head
     .charts
       .chart
         h2 Sales Available
+        span #{totalRevenue.totalQuantitySold}
         canvas#lineChart
 script(src='https://cdn.jsdelivr.net/npm/chart.js')
 script(src='../css/director.js')

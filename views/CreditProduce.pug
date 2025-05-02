@@ -20,7 +20,7 @@ head
           input(type='text' name='nationalid' placeholder="Enter buyer's National id")
         .user-input-box
           label Location
-          input(type='string' name='location' placeholder="Enter buyer's location")
+          input(type='text' name='location' placeholder="Enter buyer's location")
         .user-input-box
           label Tonnage(kgs)
           input(type='number' name='quantity' placeholder='Add quantity')
@@ -55,3 +55,36 @@ head
             br
           div
             button.submit Submit
+    br
+    br
+    table.ui.green.table
+      thead
+        th Buyer&apos;s name
+        th National id
+        th Location
+        th Amount due
+        th Sales Agent&apos;s name
+        th Due Date
+        th Dispatch Date
+        th Phone Number
+        th Type of Produce
+        th Name of Produce
+        th EDIT
+        th DELETE
+          
+        tbody
+  each item in creditData
+    tr
+      td= item.buyername
+      td= item.nationalid
+      td= item.location
+      td= item.amountdue
+      td= item.salesagentname
+      td= item.duedate.toDateString()
+      td= item.dispatchdate.toDateString()
+      td= item.phonenumber
+      td= item.typeproduce
+      td= item.produce
+      td: a(href=`/edit/${item._id}`) Edit
+      td: a(href=`/delete/${item._id}`) Delete
+

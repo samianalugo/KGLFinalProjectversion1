@@ -11,10 +11,10 @@ router.post("/addSupplier",async(req, res)=>{
         const supplier = new Supplier(req.body);
         await supplier.save();
         console.log(supplier)
-        res.redirect("Supplier/addSupplier")
+        res.redirect("/addSupplier")
 
-    }catch{
-        res.status(400).render("Supplier")
+    }catch (error){
+        res.status(400).render("/addSupplier")
         console.log(error);
     }
 });

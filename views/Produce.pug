@@ -11,7 +11,7 @@ head
     .header1
       h1 Add Produce
       div
-    form(action='addproduce' method='post')
+    form(action='/addproduce' method='post')
       .main-user-info
         .user-input-box
           label Type of Produce
@@ -33,7 +33,7 @@ head
           input(type='date' name='date' placeholder="Enter today's date")
         .user-input-box
           label Time of Produce
-          input(type='time' name='date' placeholder='Enter time')
+          input(type='time' name='time' placeholder='Enter time')
         .user-input-box
           label(for='phonenumber') Phone Number
           input#phoneNumber(type='number' name='phoneNumber' placeholder="Enter dealer's phone number")

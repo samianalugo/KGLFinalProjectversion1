@@ -11,10 +11,10 @@ router.post('/addClient',async(req, res)=>{
         const client = new Client(req.body);
         await client.save();
         console.log(client)
-        res.redirect("Client/addClient")
+        res.redirect("/addClient")
 
-    }catch{
-        res.status(400).render("Client")
+    }catch (error){
+        res.status(400).render("/addClient")
         console.log(error);
     }
 });

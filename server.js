@@ -16,12 +16,14 @@ const Signup = require('./models/SignUp');
 
 //2.Instanciations
 const app = express();
-const PORT = 3010;
+const PORT = 3020;
 
 //import routes
+const managerchartRoutes = require("./routes/managerchartRoutes");
+const indexRoutes = require("./routes/indexRoutes");
 const clientRoutes = require("./routes/clientRoutes");
 const creditproduceRoutes = require("./routes/creditproduceRoutes")
-const recordsaleRoutes = require("./routes/recordsaleRoutes");
+const addSaleRoutes = require("./routes/salesRoutes");
 const addproduceRoutes = require("./routes/addproduceRoutes");
 const managerRoutes = require("./routes/managerRoutes");
 const directorRoutes = require("./routes/directorRoutes");
@@ -29,6 +31,7 @@ const salesAgentRoutes = require("./routes/salesAgentRoutes");
 const authRoutes= require("./routes/authRoutes");
 const supplier = require("./routes/supplierRoutes");
 const Payment = require("./routes/paymentsRoutes");
+const creditRoutes = require("./routes/creditRoutes");
 
 //3.configuration
 app.locals.moment = moment;
@@ -74,10 +77,12 @@ app.use("/", creditproduceRoutes);
 app.use("/", managerRoutes);
 app.use("/", salesAgentRoutes);
 app.use("/", directorRoutes);
-app.use("/", recordsaleRoutes);
+app.use("/", addSaleRoutes);
 app.use("/", supplier);
 app.use("/", Payment);
-
+app.use("/", indexRoutes);
+app.use("/", managerchartRoutes);
+app.use("/", creditRoutes);
 
 //redirection to unavailable page
 app.get("*", (req, res) => {

@@ -11,10 +11,10 @@ router.post("/addPayment",async(req, res)=>{
         const payment = new Payments(req.body);
         await payment.save();
         console.log(payment)
-        res.redirect("Payments/addPayment")
+        res.redirect("/addPayment")
 
-    }catch{
-        res.status(400).render("Payments")
+    }catch (error){
+        res.status(400).render("/addPayment")
         console.log(error);
     }
 });
