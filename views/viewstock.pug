@@ -1,0 +1,55 @@
+
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css')
+  link(rel='stylesheet' href='../css/bootstrap-5.3.3-dist/css/bootstrap.css')
+  link(rel='stylesheet' href='../css/managerdash.css')
+  title View Stock
+.container-fluid(action='/viewingstock')
+  .topbar.d-flex.justify-content-between.align-items-center.p-3
+    .logo
+      h2 Dashboard
+    .d-flex.align-items-center.gap-3
+      .search
+        input#search.form-control(type='text' placeholder='Search here')
+      i.las.la-bell.fs-3
+      img(src='../public/img/user.png' alt='user' style='height: 40px;')
+  // Main Content
+  .col-md-10
+     .table-responsive.px-3
+      .d-flex.justify-content-between.align-items-center.mt-4.mb-2
+        h3.ms-3 Stock Records
+        a.btn(href='/addproduce') + Add New Product
+      .table-responsive
+        table.table.table-bordered.table-striped.text-center.align-middle
+          thead
+            tr
+              th Tonnage (kgs)
+              th Cost Price
+              th Selling Price
+              th Dealer's Name
+              th Date
+              th Produce Name
+              th Type of produce
+              th Edit 
+              th Delete
+          tbody
+           if Produces.length 
+            each stockItems in Produces
+              tr
+                td #{stockItems.quantity} kg
+                td Ush#{stockItems.costprice}
+                td Ush#{stockItems.sellingprice}
+                td #{stockItems.dealername}
+                td #{stockItems.date}
+                td #{stockItems.produce}
+                td #{stockItems.typeproduce}
+                td
+                  a.btn.btn-secondary.btn-block(href=`/editproduce/${stockItems._id}`) Edit
+                td
+                   form(action=`/deleteproduce/${stockItems._id}` method='POST' style='display:inline-block; margin-left:5px;')
+                    button.btn.btn-sm.btn-danger(type='submit' onclick='return confirm("Are you sure?")') Delete
+                  
+                

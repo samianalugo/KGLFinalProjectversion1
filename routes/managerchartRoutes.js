@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const CreditEntry = require('../models/CreditEntry'); // Adjust path if needed
-const User = require('../models/User');               // Adjust path if needed
+const User = require('../models/SignUp');               // Adjust path if needed
 
 router.get('/api/chart-data', async (req, res) => {
   try {

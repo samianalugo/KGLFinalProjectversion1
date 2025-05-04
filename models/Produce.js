@@ -1,6 +1,6 @@
 //defining a schema
 const mongoose = require("mongoose");
-const passportLocalMongoose = require("passport-Local-Mongoose");
+
 const produceSchema = new mongoose.Schema({
   typeproduce: {
     type: String,
@@ -18,15 +18,23 @@ const produceSchema = new mongoose.Schema({
     type: Number,
     trim: true,
   },
+  dealername: {
+    type: String,
+    trim: true
+  },
   date: {
     type: Date,
-    trim: true,
+    default: Date.now,
   },
 
   phoneNumber: {
     type: Number,
     trim: true
-  }
+  },
+  prodname: {
+    type: String,
+    trim: true,
+  },
 });
 
 module.exports = mongoose.model("Produce", produceSchema);

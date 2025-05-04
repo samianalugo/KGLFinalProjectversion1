@@ -16,9 +16,12 @@ const Signup = require('./models/SignUp');
 
 //2.Instanciations
 const app = express();
-const PORT = 3020;
+const PORT = 3030;
 
 //import routes
+
+const viewstockRoutes = require("./routes/viewstockRoutes");
+const viewingsaleRoutes = require("./routes/viewingsaleRoutes");
 const managerchartRoutes = require("./routes/managerchartRoutes");
 const indexRoutes = require("./routes/indexRoutes");
 const clientRoutes = require("./routes/clientRoutes");
@@ -70,6 +73,8 @@ passport.deserializeUser(Signup.deserializeUser());
 
 //5. Routes
 //using imported routes
+app.use("/", viewstockRoutes);
+app.use("/", viewingsaleRoutes);
 app.use("/", addproduceRoutes);
 app.use("/", clientRoutes);
 app.use("/", authRoutes);

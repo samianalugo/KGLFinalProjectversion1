@@ -1,0 +1,56 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Edit Produce
+    link(rel="stylesheet" href="../css/bootstrap-5.3.3-dist/css/bootstrap.css")
+    link(rel="stylesheet" href="../css/addproduce.css")
+    link(rel='stylesheet' href='../css/signin.css')
+  body
+    .container.mt-5
+      h2.text-top.mb-4 Edit a Sale
+
+      form(action=`/editsale/${item._id}` method="POST")
+        .mb-3
+          label.form-label(for="quantity") Tonnage (kgs)
+          input.form-control(type="number", name="saletonnage", id="quantity", value=item.quantity, required)
+
+        .mb-3
+          label.form-label(for="costprice") Price per kg
+          input.form-control(type="number", name="unitsellingprice", id="costprice", value=item.costprice, required)
+
+        .mb-3
+          label.form-label(for="sellingprice")  Amount Paid
+          input.form-control(type="number", name="amountpaid" value=item.sellingprice, required)
+
+        .mb-3
+          label.form-label(for="phoneNumber") Buyer&apos;s name
+          input.form-control(type="text", name="buyername",  value=item.phoneNumber, required)
+
+        .mb-3
+          label.form-label(for="selleragent") Sales Agent&apos;s name
+          input.form-control(type="text", name="sellername", value=item.date.toISOString().split('T')[0], required)
+        .mb-3
+          label.form-label(for="date") Date
+          input.form-control(type="date", name="date", id="time", value=item.date.toISOString().split('T')[1].slice(0,5), required)
+
+        .mb-3
+          label.form-label(for="time") Time
+          input.form-control(type="time", name="time", id="time", value=item.date.toISOString().split('T')[1].slice(0,5), required)
+
+         .gender-details-box
+          span.gender-title Name of Produce
+          .gender-category
+            select.produce(name='prodname')
+              option(value='')
+              option(value='grainmaize') Grain Maize
+              option(value='soybeans') Soy Beans
+              option(value='cowpeas') Cow Peas
+              option(value='gnuts') Gnuts
+              option(value='beans') Beans
+            br
+          div
+
+        button.btn.btn-primary(type="submit") Edit Produce
+        a.btn.btn-secondary.ms-2(href="/viewingstock") Cancel

@@ -3,8 +3,10 @@ const router = express.Router();
 
 const Sale = require('../models/Sale');
 const User = require('../models/SignUp');
+const Produce = require('../models/Produce');
 
- router.get("/managerdash", (req, res) => {
+ router.get("/managerdash", async (req, res) => {
+  const produce = await Produce.findById(req.params.id);
    res.render("managerdashboard");
  });
 
@@ -46,8 +48,11 @@ const connectEnsureLogin = require("connect-ensure-login");
 router.get(
   "/api/chart-data",
   connectEnsureLogin.ensureLoggedIn(),
+  
   async (req, res) => {
+
     if (req.user.role !== "manager") {
+      
       return res.status(403).json({ error: "Access denied" });
     }
     // ... your logic

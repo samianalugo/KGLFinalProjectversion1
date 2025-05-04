@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const CreditEntry = require('../models/CreditEntry');
 
-const query = req.user.role === 'manager' ? {} : { createdBy: req.user._id };
-const entries = await CreditEntry.find(query).sort({ dispatchdate: -1 });
+//const query = req.user.role === 'manager' ? {} : { createdBy: req.user._id };
+//const entries = await CreditEntry.find(query).sort({ dispatchdate: -1 });
 
 
 // Render edit form
@@ -92,5 +92,5 @@ router.post('/edit/:id', async (req, res) => {
       res.status(500).send('Server Error');
     }
   });
-  
+  module.exports = router;
   

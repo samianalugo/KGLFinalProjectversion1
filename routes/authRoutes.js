@@ -24,14 +24,25 @@ router.post("/signingup", async (req, res) => {
 });
 
 // Login
+// router.get("/login", (req, res) => res.render("Login"));
+
+// router.post(
+//   "/login",
+//   passport.authenticate("local", { failureRedirect: "/login" }),
+//   (req, res) => {
+//     req.session.user = req.user;
+
+  
+// });
 router.get("/login", (req, res) => res.render("Login"));
 
 router.post(
-  "/login",
-  passport.authenticate("local", { failureRedirect: "/login" }),
-  (req, res) => {
-    req.session.user = req.user;
-
+     "/login",
+     passport.authenticate("local", { failureRedirect: "/login" }),
+    (req, res) => {
+      console.log(req.body);
+       req.session.user = req.user;
+    
     // Role-based redirect
     switch (req.user.role) {
       case "manager":
@@ -43,8 +54,8 @@ router.post(
       default:
         return res.send("You don't have any role in the system");
     }
-  }
-);
+    });
+
 
 // Logout
 router.get("/logout", (req, res) => {

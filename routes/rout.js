@@ -1,20 +1,3 @@
-const express = require('express')
-const router = express.Router();
-
-const Produce = require("../models/Produce")
-
-router.get("/addproduce", (req, res)=>{
-    res.render("Produce")
-})
-
-
-router.post("/addproduce", async (req, res) => {
-    const newProduce = new Produce(req.body);
-    await newProduce.save();
-    res.redirect("/viewingstock");
-  });
-  
-
 // View all stock
 router.get('/viewingstock', async (req, res) => {
     try {
