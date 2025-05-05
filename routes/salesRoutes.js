@@ -192,7 +192,9 @@ router.get(
 //show edit form
 router.get("/editsale/:id", async (req, res) => {
     const item = await Sale.findById(req.params.id);
-    res.render("editsale", { item });
+    const produces = await Produce.find();
+    res.render("editsale", { item,
+    produces: produces });
   });
   
   // Handle deletion

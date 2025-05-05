@@ -16,7 +16,7 @@ const Signup = require('./models/SignUp');
 
 //2.Instanciations
 const app = express();
-const PORT = 3030;
+const PORT = 3040;
 
 //import routes
 

@@ -3,14 +3,9 @@ body {
     font-weight: bold;
     font-size: 22px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url("../img/coverp.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-image: url(../img/coverp.jpg);
     color: #ffffff;
     height: 100vh;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;

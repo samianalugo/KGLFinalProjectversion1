@@ -32,8 +32,8 @@ const saleSchema = new mongoose.Schema({
   },
 
   prodname: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Produce"
+    type: String,
+    trim: true
   }
 });
 

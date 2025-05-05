@@ -20,6 +20,7 @@ const signupSchema = new mongoose.Schema({
   },
   branch: {
     type: String,
+    enum: ['Matugga', 'Maganjo'],
     trim: true,
   },
   role: {

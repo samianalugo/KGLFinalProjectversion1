@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
+
 const Signup = require("../models/SignUp");
 
 // Signup
@@ -8,10 +9,13 @@ router.get("/signingup", (req, res) => res.render("Signup"));
 
 router.post("/signingup", async (req, res) => {
   try {
-    const user = new Signup(req.body);
+    const {email, role, branch} = req.body;
+    //const user = new Signup(req.body);
     const existingUser = await Signup.findOne({ email: req.body.email });
 
     if (existingUser) return res.status(400).send("Email already taken");
+    
+    const user = new Signup({ email, role, branch}); 
 
     await Signup.register(user, req.body.password, (error) => {
       if (error) throw error;
@@ -42,20 +46,33 @@ router.post(
     (req, res) => {
       console.log(req.body);
        req.session.user = req.user;
+        
+        
+       const {role, branch} =req.user;
+
+       if (role === "director") {
+        return res.redirect("/directordash");}
+
+      else if (role === "salesagent" && branch === "Maganjo") {
+        return res.redirect("/maganjo/salesagentdash");
+      }
+       else if (role === "manager" && branch === "Maganjo") {
+        return res.redirect("/maganjo/managerdash");
+      }
     
     // Role-based redirect
-    switch (req.user.role) {
-      case "manager":
-        return res.redirect("/managerdash");
-      case "salesagent":
-        return res.redirect("/salesagentdash");
-      case "director":
-        return res.redirect("/directordash");
-      default:
-        return res.send("You don't have any role in the system");
-    }
-    });
+    // switch (req.user.role) {
+    //   case "manager":
+    //     return res.redirect("/managerdash");
+    //   case "salesagent":
+    //     return res.redirect("/salesagentdash");
+    //   case "director":
+    //     return res.redirect("/directordash");
+    //   default:
+    //     return res.send("You don't have any role in the system");
 
+    });
+   
 
 // Logout
 router.get("/logout", (req, res) => {
