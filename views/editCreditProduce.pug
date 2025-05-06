@@ -42,7 +42,13 @@ html
         .user-input-box
           label Type of Produce
         input(type='text' name='typeproduce' value=credit.typeproduce placeholder="Type of Produce")
-        .gender-details-box
+       span.gender-title(name='branch') Branch
+      .gender-category
+        input#matugga(type='radio' name='branch' value=credit.Matugga)
+        label(for='Matugga') Matugga
+        input#maganjo(type='radio' name='branch' value=credit.Maganjo)
+        label(for='Maganjo') Maganjo
+       .gender-details-box
           span.gender-title Name of Produce
           .gender-category
         select(name='produce')
@@ -51,4 +57,4 @@ html
           option(value='cowpeas' selected=credit.produce=='cowpeas') Cow Peas
           option(value='gnuts' selected=credit.produce=='gnuts') Gnuts
           option(value='beans' selected=credit.produce=='beans') Beans
-        button(type="submit") Update
+        button(type="submit") Edit

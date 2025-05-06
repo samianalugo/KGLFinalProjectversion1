@@ -9,6 +9,8 @@ const signupSchema = new mongoose.Schema({
   email: {
     type: String,
     trim: true,
+    require: true,
+    unique: true
   },
   phoneNumber: {
     type: Number,

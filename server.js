@@ -16,10 +16,11 @@ const Signup = require('./models/SignUp');
 
 //2.Instanciations
 const app = express();
-const PORT = 3040;
+const PORT = 3048;
 
 //import routes
-
+const viewcredit = require("./routes/viewcreditsaleRoutes");
+const viewsupplier = require("./routes/viewsupplierRoutes");
 const viewstockRoutes = require("./routes/viewstockRoutes");
 const viewingsaleRoutes = require("./routes/viewingsaleRoutes");
 const managerchartRoutes = require("./routes/managerchartRoutes");
@@ -32,6 +33,7 @@ const managerRoutes = require("./routes/managerRoutes");
 const directorRoutes = require("./routes/directorRoutes");
 const salesAgentRoutes = require("./routes/salesAgentRoutes");
 const authRoutes= require("./routes/authRoutes");
+const viewingstocking = require("./routes/viewstockingRoutes");
 const supplier = require("./routes/supplierRoutes");
 const Payment = require("./routes/paymentsRoutes");
 const creditRoutes = require("./routes/creditRoutes");
@@ -78,6 +80,7 @@ app.use("/", viewingsaleRoutes);
 app.use("/", addproduceRoutes);
 app.use("/", clientRoutes);
 app.use("/", authRoutes);
+app.use("/", viewcredit);
 app.use("/", creditproduceRoutes);
 app.use("/", managerRoutes);
 app.use("/", salesAgentRoutes);
@@ -87,7 +90,9 @@ app.use("/", supplier);
 app.use("/", Payment);
 app.use("/", indexRoutes);
 app.use("/", managerchartRoutes);
+app.use("/", viewingstocking);
 app.use("/", creditRoutes);
+app.use("/", viewsupplier);
 
 //redirection to unavailable page
 app.get("*", (req, res) => {

@@ -40,17 +40,24 @@ html(lang="en")
           label.form-label(for="time") Time
           input.form-control(type="time", name="time", id="time", value=item.date.toISOString().split('T')[1].slice(0,5), required)
 
+        .gender-details-box
+            span.gender-title Branch
+            .gender-category
+              input#matugga(type='radio', name='branch', value=item.branch)
+              label(for='Matugga') Matugga
+              input#maganjo(type='radio' name='branch' value=item.branch)
+              label(for='Maganjo') Maganjo
         .mb-3 
           .gender-details-box
             span.gender-title Name of Produce
             .gender-category
               select.produce(name='prodname')
                 option(value='') Choose...
-                option(value='grainmaize') Grain Maize
-                option(value='soybeans') Soy Beans
-                option(value='cowpeas') Cow Peas
-                option(value='gnuts') Gnuts
-                option(value='beans') Beans
+                option(value='grainmaize'  selected=item.prodname=='grainmaize') Grain Maize
+                option(value='soybeans' selected=item.prodname=='soybeans') Soy Beans
+                option(value='cowpeas' selected=item.prodname=='cowpeas') Cow Peas
+                option(value='gnuts' selected=item.prodname=='gnuts') Gnuts
+                option(value='beans' selected=item.prodname=='beans') Beans
               br
             div
 

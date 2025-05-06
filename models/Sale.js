@@ -34,7 +34,11 @@ const saleSchema = new mongoose.Schema({
   prodname: {
     type: String,
     trim: true
-  }
+  },
+  branch: {
+    type: String,
+    trim: true
+  },
 });
 
 module.exports = mongoose.model("Sale", saleSchema);

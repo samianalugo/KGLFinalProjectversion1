@@ -1,6 +1,6 @@
 //defining a schema
 const mongoose = require("mongoose");
-const passportLocalMongoose = require("passport-Local-Mongoose");
+
 const supplierSchema = new mongoose.Schema({
   company: {
     type: String,

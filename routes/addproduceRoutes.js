@@ -19,7 +19,8 @@ router.post("/addproduce", async (req, res) => {
 router.get('/viewingstock', async (req, res) => {
     try {
       const stockItems = await Produce.find(); // fetch data from DB
-      res.render('viewstock', { stockItems }); // pass it to Pug
+      res.render('viewstock', { 
+        Produces: stockItems }); // pass it to Pug
     } catch (error) {
       console.error('Error fetching stock:', error);
       res.status(500).send('Server Error');

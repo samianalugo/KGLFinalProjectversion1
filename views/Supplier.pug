@@ -19,5 +19,12 @@ head
         input#phoneNumber(type='number' name='phoneNumber' placeholder="Enter supplier's phone number")
         label(for='location') Location
         input#location(type='text' name='location' placeholder="Enter supplier's location")
+        .gender-details-box
+            span.gender-title Branch
+            .gender-category
+              input#matugga(type='radio' name='branch' value='Matugga')
+              label(for='Matugga') Matugga
+              input#maganjo(type='radio' name='branch' value='Maganjo')
+              label(for='Maganjo') Maganjo
     button.submit Submit
 // <h1>Table for existing Suppliers</h1>

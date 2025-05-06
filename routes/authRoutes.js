@@ -9,13 +9,14 @@ router.get("/signingup", (req, res) => res.render("Signup"));
 
 router.post("/signingup", async (req, res) => {
   try {
-    const {email, role, branch} = req.body;
+    const {fullName, username, password, phoneNumber, gender, role, branch} = req.body;
     //const user = new Signup(req.body);
     const existingUser = await Signup.findOne({ email: req.body.email });
 
     if (existingUser) return res.status(400).send("Email already taken");
     
-    const user = new Signup({ email, role, branch}); 
+    const user = new Signup({ 
+      fullName, email: username, password, phoneNumber, gender, role, branch}); 
 
     await Signup.register(user, req.body.password, (error) => {
       if (error) throw error;
@@ -53,11 +54,11 @@ router.post(
        if (role === "director") {
         return res.redirect("/directordash");}
 
-      else if (role === "salesagent" && branch === "Maganjo") {
-        return res.redirect("/maganjo/salesagentdash");
+      else if (role === "salesagent") {
+        return res.redirect("/salesagentdash");
       }
-       else if (role === "manager" && branch === "Maganjo") {
-        return res.redirect("/maganjo/managerdash");
+       else if (role === "manager") {
+        return res.redirect("/managerdash");
       }
     
     // Role-based redirect

@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const Sale = require("../models/Sale");
 const Produce = require("../models/Produce"); // Make sure this path is correct
 //View all stock
 router.get("/viewingstock", async (req, res) => {
@@ -35,4 +36,43 @@ router.post('/deleteproduce/:id', async (req, res) => {
   }
 });
 
+
+router.get("/viewingstock", async (req, res) => {
+  try {
+    // 1. Get all produce items
+    const produces = await Produce.find().lean();
+
+    // 2. Aggregate sales grouped by produce ID
+    const salesAgg = await Sale.aggregate([
+      {
+        $group: {
+          _id: "$prodname", // Group by produce ID
+          totalSold: { $sum: "$saletonnage" }
+        }
+      }
+    ]);
+
+    // 3. Convert to a map for easy lookup
+    const salesMap = {};
+    salesAgg.forEach(sale => {
+      salesMap[sale._id.toString()] = sale.totalSold;
+    });
+
+    // 4. Attach remaining quantity to each produce
+    const updatedProduces = produces.map(prod => {
+      const sold = salesMap[prod._id.toString()] || 0;
+      const remaining = (prod.quantity || 0) - sold;
+      return {
+        ...prod,
+        sold,
+        remaining
+      };
+    });
+
+    res.render("viewstock", { Produces: updatedProduces });
+  } catch (error) {
+    console.error("Error viewing stock:", error);
+    res.status(500).send("Server Error");
+  }
+});
 module.exports = router;

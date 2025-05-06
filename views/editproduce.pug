@@ -25,8 +25,8 @@ html(lang="en")
           input.form-control(type="number", name="sellingprice", id="sellingprice", value=item.sellingprice, required)
 
         .mb-3
-          label.form-label(for="phoneNumber") Dealer's Name
-          input.form-control(type="text", name="phoneNumber", id="phoneNumber", value=item.phoneNumber, required)
+          label.form-label(for="dealername") Dealer's Name
+          input.form-control(type="text", name="dealername", id="dealername", value=item.dealername, required)
 
         .mb-3
           label.form-label(for="date") Date
@@ -39,6 +39,14 @@ html(lang="en")
         .mb-3
           label.form-label(for="typeproduce") Type of Produce
           input.form-control(type="text", name="typeproduce", id="typeproduce", value=item.typeproduce, required)
+        
+        .gender-details-box
+            span.gender-title Branch
+            .gender-category
+              input#matugga(type='radio' name='branch' value=item.branch)
+              label(for='Matugga') Matugga
+              input#maganjo(type='radio' name='branch' value=item.branch)
+              label(for='Maganjo') Maganjo
 
         button.btn.btn-primary(type="submit") Edit Produce
         a.btn.btn-secondary.ms-2(href="/viewingstock") Cancel

@@ -36,6 +36,14 @@ html
         label Type of Produce
         input(type='text', name='typeproduce', value=credit.typeproduce)
 
+        .gender-details-box
+            span.gender-title Branch
+            .gender-category
+              input#matugga(type='radio' name='branch' value=credit.Matugga)
+              label(for='Matugga') Matugga
+              input#maganjo(type='radio' name='branch' value=credit.Maganjo)
+              label(for='Maganjo') Maganjo
+
         label Name of Produce
         select(name='produce')
           option(value='grainmaize', selected=credit.produce == 'grainmaize') Grain Maize
